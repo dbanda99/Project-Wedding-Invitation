@@ -323,7 +323,14 @@ body {
   height: 500px;
   margin-bottom: 2rem;
   object-fit: cover;
-  ;
+}
+
+.story-divider-2 {
+  width: 450px;
+  height: 400px;
+  margin-bottom: 2rem;
+  margin-left: 27rem;
+  object-fit: cover;
 }
 
 .story-subtitle {
