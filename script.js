@@ -35,7 +35,7 @@
 })();
 
 // ================================
-// 2. Music HUD: Play/Pause & Progreso
+// 2. Music HUD: Play/Pause & Progreso (con autoplay forzado)
 // ================================
 (function () {
   const audio = document.getElementById('weddingSong');
@@ -58,12 +58,19 @@
   audio.addEventListener('loadedmetadata', function () {
     if (!isNaN(audio.duration)) {
       durationEl.textContent = formatTime(audio.duration);
-      // Intentamos reproducir automáticamente apenas tengamos la duración
-      // Algunos navegadores bloquean autoplay sin gesto de usuario, pero se coloca aquí
-      audio.play().catch(() => {
-        // Si falla (por política de navegador), no hacemos nada.
-        // El usuario podrá darle play manualmente.
-      });
+
+      // Intentar reproducir automáticamente
+      audio.play()
+        .then(() => {
+          // Si logra reproducirse, actualizar el estado y el ícono
+          isPlaying = true;
+          icon.classList.remove('bi-play-fill');
+          icon.classList.add('bi-pause-fill');
+        })
+        .catch(() => {
+          // Si el navegador bloquea autoplay, no hacemos nada. 
+          // El usuario podrá darle al botón manualmente.
+        });
     }
   });
 
@@ -104,27 +111,17 @@
     icon.classList.add('bi-pause-fill');
   });
 
-  // Por si quieres forzar un 'play()' apenas carga el DOM:
+  // Como refuerzo, forzamos otro play() al cargar la página
   window.addEventListener('load', () => {
-    audio.play().catch(() => {
-      // Si el navegador bloquea autoplay, no hay más que hacer.
-    });
-  });
-})();
-
-// ================================
-// 3. Galería Fullscreen (sin cambios)
-// ================================
-(function () {
-  const albumImages = document.querySelectorAll('.album-img');
-  const modalImage = document.getElementById('modalImage');
-  const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
-
-  albumImages.forEach((img) => {
-    img.addEventListener('click', function () {
-      modalImage.src = this.src;
-      modalImage.alt = this.alt;
-      imageModal.show();
-    });
+    audio.play()
+      .then(() => {
+        // Si logra reproducirse tras el load, actualizar el estado y el ícono
+        isPlaying = true;
+        icon.classList.remove('bi-play-fill');
+        icon.classList.add('bi-pause-fill');
+      })
+      .catch(() => {
+        // Si aún así el navegador lo bloquea, no hacemos nada
+      });
   });
 })();
