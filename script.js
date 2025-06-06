@@ -141,4 +141,114 @@
         });
     })();
 
+    // ================================
+    // 4. Efecto de hojas cayendo
+    // ================================
+    ; (function () {
+        // ————— EDITABLE VARS —————
+        const MAX_LEAVES = 15;    // Máximo de hojas en pantalla
+        const SPAWN_INTERVAL_MS = 1500; // Cada cuántos ms aparece una nueva hoja
+        const VX_RANGE = [0.2, 1.2]; // [min, max] velocidad horizontal
+        const VY_RANGE = [0.5, 2.5]; // [min, max] velocidad vertical
+        // ————————————————————————
+
+        // Detección de móvil (≤400px) para tamaño 50%
+        const isMobile = window.matchMedia('(max-width: 400px)').matches;
+
+        // Creamos el canvas y lo adjuntamos
+        const canvas = document.createElement('canvas');
+        canvas.id = 'leafCanvas';
+        Object.assign(canvas.style, {
+            position: 'fixed',
+            top: 0, left: 0,
+            width: '100%', height: '100%',
+            pointerEvents: 'none',
+            zIndex: 2000,
+        });
+        document.body.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        let W, H;
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Carga de la imagen
+        const leafImg = new Image();
+        leafImg.src = 'data/particles.png'; // ajusta ruta si hiciera falta
+
+        // Clase Leaf
+        class Leaf {
+            constructor() { this.reset(); }
+            reset() {
+                // Reaparecen en X aleatoria a lo largo del ancho, y encima de la pantalla
+                this.x = Math.random() * W;
+                this.y = -Math.random() * 100;
+
+                // Tamaño base y reducción en móvil
+                const baseSize = 20 + Math.random() * 40;
+                this.size = isMobile ? baseSize * 0.5 : baseSize;
+
+                // Velocidades muy variables
+                this.vx = VX_RANGE[0] + Math.random() * (VX_RANGE[1] - VX_RANGE[0]);
+                this.vy = VY_RANGE[0] + Math.random() * (VY_RANGE[1] - VY_RANGE[0]);
+
+                // Rotación
+                this.rot = Math.random() * Math.PI * 2;
+                this.vr = (Math.random() - 0.5) * 0.1;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.rot += this.vr;
+                // Si sale de pantalla, reseteamos
+                if (this.y > H + this.size || this.x > W + this.size) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rot);
+                ctx.drawImage(
+                    leafImg,
+                    -this.size / 2,
+                    -this.size / 2,
+                    this.size,
+                    this.size
+                );
+                ctx.restore();
+            }
+        }
+
+        // Array de hojas y función de spawn
+        const leaves = [];
+        function spawnLeaf() {
+            if (leaves.length < MAX_LEAVES) {
+                leaves.push(new Leaf());
+            }
+        }
+
+        // Spawn inicial y spawn periódico
+        spawnLeaf();
+        setInterval(spawnLeaf, SPAWN_INTERVAL_MS);
+
+        // Loop de animación
+        function animate() {
+            ctx.clearRect(0, 0, W, H);
+            for (const leaf of leaves) {
+                leaf.update();
+                leaf.draw();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        // Arranca al cargar la imagen
+        leafImg.onload = animate;
+    })();
+
+
 })();

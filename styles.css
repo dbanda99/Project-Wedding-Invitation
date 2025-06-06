@@ -2,8 +2,10 @@
    Variables & Base
    ============== */
 :root {
-  --primary-color: #430C0C;       /* Wine oscuro */
-  --secondary-color: #F2EAE9;     /* Crema suave */
+  --primary-color: #430C0C;
+  /* Wine oscuro */
+  --secondary-color: #F2EAE9;
+  /* Crema suave */
   --overlay-color: rgba(0, 0, 0, 0.5);
   --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-serif: 'Georgia', 'Times New Roman', Times, serif;
@@ -31,24 +33,29 @@ body {
   background-color: transparent !important;
   padding-top: 1rem;
 }
+
 .logo-img {
   width: 48px;
   height: 48px;
   object-fit: cover;
   border-radius: 0.25rem;
 }
+
 .nav-brand-text {
   color: #fff;
   font-size: 1rem;
 }
+
 .navbar .nav-link {
   color: #fff !important;
   margin-left: 1rem;
   font-size: 1rem;
 }
+
 .navbar .nav-link:hover {
   color: var(--secondary-color) !important;
 }
+
 .rsvp-btn {
   background-color: #7c0b0b;
   color: #fff !important;
@@ -56,6 +63,7 @@ body {
   padding: 0.4rem 1rem;
   margin-left: 1rem;
 }
+
 .rsvp-btn:hover {
   background-color: #e78383;
   color: #fff !important;
@@ -74,6 +82,7 @@ body {
   align-items: center;
   text-align: center;
 }
+
 .hero-bg {
   position: absolute;
   top: 0;
@@ -86,6 +95,7 @@ body {
   background-position: center;
   z-index: 0;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -95,6 +105,7 @@ body {
   background-color: var(--overlay-color);
   z-index: 1;
 }
+
 .hero-section .container {
   position: relative;
   z-index: 2;
@@ -103,7 +114,8 @@ body {
 /* Título “Fernanda & David” aumentado */
 .hero-title {
   font-family: var(--font-serif);
-  font-size: 5rem;     /* Incrementado */
+  font-size: 5rem;
+  /* Incrementado */
   letter-spacing: 1px;
   color: #fff;
   line-height: 1.1;
@@ -115,10 +127,12 @@ body {
   max-width: 700px;
   margin: 0 auto;
 }
+
 .quote-text {
   font-size: 1.1rem;
   color: #fff;
 }
+
 .quote-author {
   font-size: 1rem;
   color: #fff;
@@ -140,18 +154,22 @@ body {
 .countdown {
   margin-top: 1.5rem;
 }
+
 .time-box {
-  background-color: #333; /* Gris oscuro */
+  background-color: #333;
+  /* Gris oscuro */
   padding: 1rem 1.5rem;
   border: 2px solid rgba(255, 255, 255, 0.404);
   border-radius: 1rem;
   min-width: 80px;
 }
+
 .time-number {
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
 }
+
 .time-box small {
   font-size: 0.85rem;
   color: #fff;
@@ -164,48 +182,67 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .music-hud {
-  background-color: #00000075;               /* Negro */
-  border: 2px solid rgba(255, 255, 255, 0.404);/* Borde vino */
-  border-radius: 2rem;                    /* Esquinas redondeadas */
+  background-color: #00000075;
+  /* Negro */
+  border: 2px solid rgba(255, 255, 255, 0.404);
+  /* Borde vino */
+  border-radius: 2rem;
+  /* Esquinas redondeadas */
   width: 100%;
-  max-width: 640px;                       /* Reducido de 700px a 640px */
-  padding: 0.75rem;                       /* Un poco menos de relleno */
+  max-width: 640px;
+  /* Reducido de 700px a 640px */
+  padding: 0.75rem;
+  /* Un poco menos de relleno */
   display: flex;
   align-items: center;
 }
+
 /* Carátula del álbum un poco más pequeña */
 .music-album-art {
   flex-shrink: 0;
 }
+
 .music-album-art .album-img {
-  width: 140px;   /* Reducido de 150px a 140px */
-  height: 140px;  /* Reducido de 150px a 140px */
+  width: 140px;
+  /* Reducido de 150px a 140px */
+  height: 140px;
+  /* Reducido de 150px a 140px */
   object-fit: cover;
   border: 3px solid #fff;
   border-radius: 1rem;
 }
+
 /* Detalles */
 .music-details {
   flex-grow: 1;
   color: #fff;
-  padding-left: 0.75rem;  /* Ligero ajuste */
-  padding-right: 0.75rem; /* Ligero ajuste */
+  padding-left: 0.75rem;
+  /* Ligero ajuste */
+  padding-right: 0.75rem;
+  /* Ligero ajuste */
 }
+
 .music-details .now-playing {
   font-size: 0.9rem;
 }
+
 .music-details .song-title {
-  font-size: 1.4rem;   /* Reducido de 1.5rem a 1.4rem */
+  font-size: 1.4rem;
+  /* Reducido de 1.5rem a 1.4rem */
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
+
 /* Barra de progreso */
 .progress-container {
   position: relative;
-  height: 10px;      /* Reducido de 12px a 10px */
+  height: 10px;
+  /* Reducido de 12px a 10px */
   margin-bottom: 8px;
 }
+
 .bar-bg {
   background-color: #ccc;
   border-radius: 5px;
@@ -213,43 +250,53 @@ body {
   height: 100%;
   position: relative;
 }
+
 .bar-fill {
   background-color: #BA1A1A;
   height: 100%;
   border-radius: 5px 0 0 5px;
   width: 0%;
 }
+
 .bar-thumb {
   position: absolute;
   top: 50%;
   left: 0%;
   transform: translate(-50%, -50%);
-  width: 14px;   /* Reducido de 16px a 14px */
-  height: 14px;  /* Reducido de 16px to 14px */
+  width: 14px;
+  /* Reducido de 16px a 14px */
+  height: 14px;
+  /* Reducido de 16px to 14px */
   background-color: #D3A8A8;
   border: 2px solid var(--primary-color);
   border-radius: 50%;
 }
+
 /* Etiquetas de tiempo */
 .time-labels {
   font-size: 0.8rem;
   color: #fff;
   margin-bottom: 0.75rem;
 }
+
 /* Botón Play/Pause un poco más pequeño */
 .btn-play {
-  width: 52px;    /* Reducido de 56px a 52px */
-  height: 52px;   /* Reducido de 56px a 52px */
+  width: 52px;
+  /* Reducido de 56px a 52px */
+  height: 52px;
+  /* Reducido de 56px a 52px */
   border-radius: 50%;
   background-color: transparent;
   border: 2px solid #fff;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.4rem; /* Reducido de 1.5rem a 1.4rem */
+  font-size: 1.4rem;
+  /* Reducido de 1.5rem a 1.4rem */
   color: #fff;
   transition: background-color 0.2s, color 0.2s;
 }
+
 .btn-play:hover {
   background-color: #fff;
   color: #000;
@@ -275,14 +322,17 @@ body {
   width: 400px;
   height: 500px;
   margin-bottom: 2rem;
-  object-fit: cover;;
+  object-fit: cover;
+  ;
 }
+
 .story-subtitle {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 0.75rem;
   color: var(--primary-color);
 }
+
 #our-story p {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -295,32 +345,39 @@ body {
 .bg-secondary-section {
   background-color: var(--secondary-color);
 }
+
 .detail-card {
   background-color: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
+
 .detail-card:hover {
   transform: translateY(-4px);
 }
+
 .detail-card .icon {
   font-size: 2rem;
 }
+
 .detail-card .detail-title {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: var(--primary-color);
 }
+
 .detail-card p {
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
+
 .btn-primary {
   background-color: var(--primary-color);
   border: none;
 }
+
 .btn-primary:hover {
   background-color: #2e0808;
 }
@@ -331,13 +388,16 @@ body {
 #rsvp {
   background-color: #fff;
 }
+
 #rsvp .section-title {
   margin-bottom: 1rem;
 }
+
 #rsvp p {
   font-size: 1rem;
   margin-bottom: 1rem;
 }
+
 .btn-lg {
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
@@ -349,12 +409,14 @@ body {
 #registry {
   background-color: var(--secondary-color);
 }
+
 .registry-title {
   font-size: 1.25rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
   color: var(--primary-color);
 }
+
 #registry img {
   width: 200px;
   height: 200px;
@@ -369,14 +431,17 @@ body {
 #gallery {
   background-color: #fff;
 }
+
 #gallery p {
   font-size: 1rem;
   margin-bottom: 1.5rem;
 }
+
 .gallery-thumb {
   overflow: hidden;
   border-radius: 0.5rem;
 }
+
 #gallery .album-img {
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -384,6 +449,7 @@ body {
   width: 100%;
   height: 200px;
 }
+
 #gallery .album-img:hover {
   transform: scale(1.05);
 }
@@ -401,6 +467,7 @@ body {
   line-height: 40px;
   text-align: center;
 }
+
 .btn-close-modal:hover {
   background: rgba(255, 255, 255, 1);
 }
@@ -411,16 +478,32 @@ body {
 footer {
   background-color: #333;
 }
+
 footer a {
   text-decoration: none;
 }
+
 footer a:hover {
   color: var(--secondary-color);
 }
+
 footer p {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
+
 footer .text-warning {
   color: #F2EAE9 !important;
+}
+
+#leafCanvas {
+  background-color: #00000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2000;
+  /* above everything */
 }

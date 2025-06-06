@@ -3,22 +3,29 @@
    ====================================================== */
 
 @media (max-width: 450px) {
+
   /* ======================
      Navbar (ajustes mínimos)
      ====================== */
   .navbar {
     padding-top: 0.5rem;
   }
+
   .logo-img {
-    width: 32px;    /* Reducido de 48px */
+    width: 32px;
+    /* Reducido de 48px */
     height: 32px;
   }
+
   .nav-brand-text {
-    font-size: 0.85rem;  /* Reducido de 0.9rem */
+    font-size: 0.85rem;
+    /* Reducido de 0.9rem */
   }
+
   .navbar-toggler .bi-list {
     font-size: 1.5rem;
   }
+
   .navbar-collapse {
     background-color: rgba(0, 0, 0, 0.80);
     border: solid 2px #ffffffa6;
@@ -26,10 +33,12 @@
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
   }
+
   .navbar-collapse .nav-link {
     font-size: 0.85rem;
     margin: 0.3rem 0;
   }
+
   .rsvp-btn {
     padding: 0.3rem 0.8rem;
     font-size: 0.8rem;
@@ -39,23 +48,32 @@
      Hero Section
      ====================== */
   .hero-section {
-    padding-top: 4rem;   /* Empuja todo el contenido hacia abajo para no solapar el navbar */
+    padding-top: 4rem;
+    /* Empuja todo el contenido hacia abajo para no solapar el navbar */
   }
+
   .hero-title {
-    font-size: 1.8rem;   /* Reducido de 2rem */
+    font-size: 1.8rem;
+    /* Reducido de 2rem */
     line-height: 1.1;
     margin-bottom: 0.5rem;
   }
+
   .quote-text {
-    font-size: 0.85rem;  /* Reducido de 0.9rem */
+    font-size: 0.85rem;
+    /* Reducido de 0.9rem */
     margin-bottom: 0.2rem;
   }
+
   .quote-author {
-    font-size: 0.8rem;   /* Reducido de 0.85rem */
+    font-size: 0.8rem;
+    /* Reducido de 0.85rem */
     margin-bottom: 0.5rem;
   }
+
   .hero-date {
-    font-size: 1.3rem;   /* Reducido de 1.5rem */
+    font-size: 1.3rem;
+    /* Reducido de 1.5rem */
     margin-top: 0.5rem;
     margin-bottom: 0.75rem;
   }
@@ -66,19 +84,26 @@
   .countdown {
     margin-top: 1rem;
   }
+
   .time-box {
     background-color: #333;
-    padding: 0.4rem 0.6rem; /* Reducido */
-    border-radius: 0.8rem;  /* Ajustado */
+    padding: 0.4rem 0.6rem;
+    /* Reducido */
+    border-radius: 0.8rem;
+    /* Ajustado */
     min-width: 45px;
   }
+
   .time-number {
-    font-size: 1.1rem;  /* Reducido de 1.2rem */
+    font-size: 1.1rem;
+    /* Reducido de 1.2rem */
     font-weight: 700;
     color: #fff;
   }
+
   .time-box small {
-    font-size: 0.7rem;  /* Reducido de 0.75rem */
+    font-size: 0.7rem;
+    /* Reducido de 0.75rem */
     color: #fff;
     margin-top: 0.2rem;
   }
@@ -88,60 +113,90 @@
      ====================== */
   .music-hud {
     flex-wrap: wrap;
-    padding: 0.4rem;        /* Reducido */
-    max-width: 90%;         /* Quepan holgadamente */
-    margin: 0 auto;         /* Centrado */
-    flex-direction: column; /* Cambia a columna en móvil */
-    align-items: center;    /* Centrar contenido */
+    padding: 0.4rem;
+    /* Reducido */
+    max-width: 90%;
+    /* Quepan holgadamente */
+    margin: 0 auto;
+    /* Centrado */
+    flex-direction: column;
+    /* Cambia a columna en móvil */
+    align-items: center;
+    /* Centrar contenido */
   }
+
   .music-album-art {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.5rem;  /* Espacio debajo de la imagen */
+    margin-bottom: 0.5rem;
+    /* Espacio debajo de la imagen */
   }
+
   .music-album-art .album-img {
-    width: 125px;    /* Reducido */
+    width: 125px;
+    /* Reducido */
     height: 125px;
     border: 2px solid #fff;
-    border-radius: 0.8rem; /* Ajustado */
+    border-radius: 0.8rem;
+    /* Ajustado */
   }
+
   .music-details {
-    margin-top: 0;         /* Quita margen superior */
+    margin-top: 0;
+    /* Quita margen superior */
     padding: 0 0.4rem;
-    text-align: center;    /* Centra texto debajo de la imagen */
+    text-align: center;
+    /* Centra texto debajo de la imagen */
     width: 100%;
   }
+
   .music-details .now-playing {
-    font-size: 0.75rem;  /* Ajuste fino */
+    font-size: 0.75rem;
+    /* Ajuste fino */
   }
+
   .music-details .song-title {
-    font-size: 1rem;    /* Reducido de 1.1rem */
+    font-size: 1rem;
+    /* Reducido de 1.1rem */
     margin-bottom: 0.4rem;
     line-height: 1.2;
   }
+
   .progress-container {
-    height: 7px;    /* Reducido de 8px */
+    height: 7px;
+    /* Reducido de 8px */
     margin-bottom: 5px;
   }
+
   .bar-bg {
-    border-radius: 3.5px;  /* Ajustado */
+    border-radius: 3.5px;
+    /* Ajustado */
   }
+
   .bar-fill {
     border-radius: 3.5px 0 0 3.5px;
   }
+
   .bar-thumb {
-    width: 11px;   /* Reducido de 12px */
+    width: 11px;
+    /* Reducido de 12px */
     height: 11px;
   }
+
   .time-labels {
-    font-size: 0.7rem;  /* Reducido de 0.75rem */
+    font-size: 0.7rem;
+    /* Reducido de 0.75rem */
   }
+
   .btn-play {
-    width: 44px;    /* Reducido de 48px */
+    width: 44px;
+    /* Reducido de 48px */
     height: 44px;
-    font-size: 1.1rem;  /* Reducido de 1.2rem */
-    margin-top: 0.5rem; /* Pequeño margen superior */
+    font-size: 1.1rem;
+    /* Reducido de 1.2rem */
+    margin-top: 0.5rem;
+    /* Pequeño margen superior */
   }
 
   /* ======================
@@ -152,6 +207,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .modal-content {
     max-width: auto;
     max-height: auto;
@@ -161,23 +217,39 @@
      Secciones Generales
      ====================== */
   .section-title {
-    font-size: 1.4rem;  /* Reducido de 1.5rem */
+    font-size: 1.4rem;
+    /* Reducido de 1.5rem */
     margin-bottom: 0.75rem;
   }
 
   .story-divider {
-  width: 250px;
-  height: 350px;
-  margin-bottom: 2rem;
+    width: 250px;
+    height: 350px;
+    margin-bottom: 2rem;
   }
+
   #our-story p,
   #details p,
   #registry p,
   #gallery p {
-    font-size: 0.85rem; /* Ajuste uniforme */
+    font-size: 0.85rem;
+    /* Ajuste uniforme */
   }
+
   .detail-card {
     margin: 0 auto 0.75rem auto;
     max-width: 280px;
   }
+
+  #leafCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 25%;
+    pointer-events: none;
+    z-index: 2000;
+    /* above everything */
+  }
+
 }
