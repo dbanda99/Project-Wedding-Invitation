@@ -1,0 +1,94 @@
+/* ============================
+   Mobile Overrides (< 768px)
+   ============================ */
+
+@media (max-width: 767px) {
+  /* Hero adjustments */
+  .hero-title {
+    font-size: 3rem;  /* Ajustado para móvil */
+  }
+  .quote-text {
+    font-size: 1rem;
+  }
+  .quote-author {
+    font-size: 0.9rem;
+  }
+  .hero-date {
+    font-size: 2rem;
+  }
+  .countdown .time-box {
+    padding: 0.75rem 1rem;
+    min-width: 60px;
+  }
+  .countdown .time-number {
+    font-size: 1.5rem;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding-top: 0.5rem;
+  }
+  .navbar-brand, .nav-link {
+    font-size: 0.9rem;
+  }
+  .rsvp-btn {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  /* Music HUD on mobile */
+  .music-hud {
+    flex-wrap: wrap;
+    padding: 0.5rem;
+  }
+  .music-album-art .album-img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #fff;
+  }
+  .music-details {
+    margin-top: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  .music-details .song-title {
+    font-size: 1.25rem;
+  }
+  .progress-container {
+    height: 8px;  /* Ajustado para móvil */
+  }
+  .bar-thumb {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Our Story */
+  #our-story p {
+    font-size: 0.95rem;
+  }
+
+  /* Event Details cards */
+  .detail-card {
+    margin: 0 auto 1.5rem auto;
+    max-width: 400px;
+  }
+
+  /* Registry QR images */
+  #registry img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Gallery thumbnails */
+  #gallery .album-img {
+    height: 150px;
+  }
+
+  /* Footer text */
+  footer p {
+    font-size: 0.85rem;
+  }
+
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}

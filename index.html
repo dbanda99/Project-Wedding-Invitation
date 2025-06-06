@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fernanda &amp; David – Invitación de Boda</title>
+
+  <!-- Favicon (reemplaza con tu icono real) -->
+  <link rel="icon" href="data/website-icon.ico" type="image/x-icon" />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-mobi.css" />
+</head>
+<body>
+  <!-- ======================
+       Navigation Bar
+       ====================== -->
+  <nav
+    class="navbar navbar-expand-lg navbar-dark bg-transparent position-absolute w-100"
+    style="z-index: 1000;"
+  >
+    <div class="container">
+      <!-- Logo como imagen de Picsum -->
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img
+          src="data/logo.png"
+          alt="Logo"
+          class="logo-img rounded-circle me-2"
+        />
+        <span class="fw-bold nav-brand-text">Fernanda &amp; David</span>
+      </a>
+      <!-- Toggler móvil -->
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <i class="bi bi-list fs-2 text-white"></i>
+      </button>
+      <!-- Menú colapsado (sin fondo en desktop; fondo semitransparente solo en móvil) -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#our-story">Our Story</a></li>
+          <li class="nav-item"><a class="nav-link" href="#details">Details</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#registry">Registry</a></li>
+          <li class="nav-item">
+            <a class="nav-link rsvp-btn" href="#rsvp">RSVP Ahora</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================
+       Hero Section (Home)
+       ====================== -->
+  <header
+    id="home"
+    class="hero-section d-flex flex-column justify-content-center align-items-center text-white text-center"
+  >
+    <!-- Fondo con imagen de Picsum -->
+    <div class="hero-bg"></div>
+    <div class="overlay"></div>
+
+    <div class="container position-relative">
+      <!-- Título Principal: “Fernanda & David” (tamaño aumentado) -->
+      <h1 class="hero-title">Fernanda &amp; David</h1>
+
+      <!-- Cita en español -->
+      <div class="quote-container mt-3">
+        <p class="quote-text">
+          “La medida del amor es amar sin medida.”
+        </p>
+        <p class="quote-author">— <em>San Agustín</em></p>
+      </div>
+
+      <!-- Fecha -->
+      <p class="hero-date mt-3">Octubre 31, 2025</p>
+
+      <!-- Countdown Timer -->
+      <div
+        id="countdown"
+        class="countdown d-flex justify-content-center align-items-center mt-4"
+      >
+        <div class="time-box mx-2 text-center">
+          <span id="days" class="time-number">00</span><br />
+          <small>Días</small>
+        </div>
+        <div class="time-box mx-2 text-center">
+          <span id="hours" class="time-number">00</span><br />
+          <small>Horas</small>
+        </div>
+        <div class="time-box mx-2 text-center">
+          <span id="minutes" class="time-number">00</span><br />
+          <small>Minutos</small>
+        </div>
+        <div class="time-box mx-2 text-center">
+          <span id="seconds" class="time-number">00</span><br />
+          <small>Segundos</small>
+        </div>
+      </div>
+
+      <!-- Music HUD (ligeramente reducido) -->
+      <div class="music-hud-wrapper mt-4">
+        <div class="music-hud music-hud-small d-flex">
+          <!-- Izquierda: Carátula del álbum -->
+          <div class="music-album-art p-2">
+            <img
+              src="data/pianoguys-logo.jpg"
+              alt="Album Art"
+              class="album-img"
+            />
+          </div>
+          <!-- Derecha: Texto, barra de progreso y botón -->
+          <div class="music-details flex-fill ps-3 pe-3">
+            <div class="now-playing mb-1">Now Playing:</div>
+            <div class="song-title mb-3">A Thousand Years - Piano Guys</div>
+
+            <!-- Barra de Progreso -->
+            <div class="progress-container mb-2">
+              <div class="bar-bg">
+                <div id="progressFill" class="bar-fill"></div>
+                <div id="thumb" class="bar-thumb"></div>
+              </div>
+            </div>
+            <!-- Etiquetas de Tiempo -->
+            <div class="time-labels d-flex justify-content-between mb-3">
+              <span id="currentTime">0:00</span>
+              <span id="durationTime">4:28</span>
+            </div>
+            <!-- Botón Circular de Play/Pause -->
+            <div class="d-flex justify-content-center">
+              <button id="audioToggle" class="btn-play">
+                <i id="audioIcon" class="bi bi-play-fill"></i>
+              </button>
+            </div>
+            <!-- Audio oculto -->
+            <audio
+              id="weddingSong"
+              src="data/Christina Perri - A Thousand Years (PianoCello Cover).mp3"
+              preload="metadata"
+            ></audio>
+          </div>
+        </div>
+      </div>
+      <!-- /Music HUD -->
+    </div>
+  </header>
+
+  <!-- ======================
+       Our Story
+       ====================== -->
+  <section id="our-story" class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-3">Our Story</h2>
+      <img
+        src="https://picsum.photos/200/50?random=99"
+        alt="Divider"
+        class="story-divider mx-auto d-block mb-4"
+      />
+
+      <div class="mb-5">
+        <h3 class="story-subtitle">How We Met</h3>
+        <p>
+          Our love story began on a rainy Tuesday at the local coffee shop downtown.
+          David was struggling with his laptop when Fernanda offered to help with a warm
+          smile. What started as a simple act of kindness blossomed into hours of
+          conversation about dreams, travel, and life. That coffee shop became our
+          special place, where we returned for our first official date and many more
+          magical moments.
+        </p>
+      </div>
+      <div>
+        <h3 class="story-subtitle">The Proposal</h3>
+        <p>
+          Two years later, David recreated that perfect first meeting. He led Fernanda
+          back to our coffee shop, where he had arranged for the staff to play our
+          favorite song. As the familiar melody filled the air, he got down on one knee
+          and asked the question that would change our lives forever. Through happy
+          tears, she said yes, y nuestro para siempre comenzó.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================
+       Event Details
+       ====================== -->
+  <section id="details" class="bg-secondary-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">Event Details</h2>
+      <div class="row text-center">
+        <div class="col-md-6 mb-4">
+          <div class="detail-card p-4 h-100">
+            <div class="icon mb-2">
+              <i class="bi bi-peace-fill fs-2 text-primary"></i>
+            </div>
+            <h3 class="detail-title">Ceremony</h3>
+            <p class="fw-bold mb-1">June 15, 2024 at 4:00 PM</p>
+            <p class="mb-1">Please arrive 30 minutes early</p>
+            <p class="mb-1">St. Mary's Garden Chapel</p>
+            <p class="mb-3">123 Rose Garden Avenue, Bloom City, BC 12345</p>
+            <p class="mb-1"><strong>Dress Code</strong></p>
+            <p class="mb-3">Formal Attire – Garden Party Elegant</p>
+            <a
+              href="https://maps.google.com/?q=123+Rose+Garden+Avenue+Bloom+City+BC+12345"
+              target="_blank"
+              class="btn btn-primary btn-sm"
+              ><i class="bi bi-geo-alt-fill me-1"></i>Get Directions</a
+            >
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="detail-card p-4 h-100">
+            <div class="icon mb-2">
+              <i class="bi bi-music-note-beamed fs-2 text-primary"></i>
+            </div>
+            <h3 class="detail-title">Reception</h3>
+            <p class="fw-bold mb-1">6:00 PM – 11:00 PM</p>
+            <p class="mb-1">Cocktail hour followed by dinner &amp; dancing</p>
+            <p class="mb-1">The Grand Ballroom</p>
+            <p class="mb-3">456 Celebration Boulevard, Bloom City, BC 12345</p>
+            <p class="mb-1"><strong>What to Expect</strong></p>
+            <p class="mb-3">
+              Three-course plated dinner, open bar, live band, and dancing until late!
+            </p>
+            <a
+              href="https://maps.google.com/?q=456+Celebration+Boulevard+Bloom+City+BC+12345"
+              target="_blank"
+              class="btn btn-primary btn-sm"
+              ><i class="bi bi-geo-alt-fill me-1"></i>Get Directions</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================
+       RSVP Section
+       ====================== -->
+  <section id="rsvp" class="py-5">
+    <div class="container text-center">
+      <h2 class="section-title mb-3">Please Join Us</h2>
+      <p class="mb-4">
+        Your presence would make our special day complete. Please let us know if you can celebrate with us!
+      </p>
+      <p class="mb-4"><em>Please respond by May 1st, 2024</em></p>
+      <a href="#contact-form" class="btn btn-primary btn-lg">
+        <i class="bi bi-envelope-fill me-1"></i>RSVP Ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================
+       Registry & Gift Codes
+       ====================== -->
+  <section id="registry" class="bg-secondary-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">Registry &amp; Gifts</h2>
+      <p class="text-center mb-5">
+        Scan any of the QR codes below to send your gift directly. Thank you so much for your support!
+      </p>
+      <div class="row justify-content-center gy-4">
+        <div class="col-6 col-md-4 text-center">
+          <h3 class="registry-title mb-3">
+            <i class="bi bi-currency-dollar text-primary me-1"></i>CashApp
+          </h3>
+          <img
+            src="https://picsum.photos/200/200?random=101"
+            alt="CashApp QR"
+            class="img-fluid rounded-2 border"
+          />
+        </div>
+        <div class="col-6 col-md-4 text-center">
+          <h3 class="registry-title mb-3">
+            <i class="bi bi-wallet-fill text-primary me-1"></i>Venmo
+          </h3>
+          <img
+            src="https://picsum.photos/200/200?random=102"
+            alt="Venmo QR"
+            class="img-fluid rounded-2 border"
+          />
+        </div>
+        <div class="col-6 col-md-4 text-center">
+          <h3 class="registry-title mb-3">
+            <i class="bi bi-paypal text-primary me-1"></i>PayPal
+          </h3>
+          <img
+            src="https://picsum.photos/200/200?random=103"
+            alt="PayPal QR"
+            class="img-fluid rounded-2 border"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================
+       Photo Gallery (Our Journey)
+       ====================== -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">Our Journey</h2>
+      <p class="text-center mb-5">A glimpse into our love story through the years</p>
+      <div class="row g-3">
+        <!-- Ocho imágenes de muestra con Picsum -->
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="gallery-thumb">
+            <img
+              src="https://picsum.photos/seed/201/600/600"
+              alt="Gallery 1"
+              class="img-fluid album-img"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="gallery-thumb">
+            <img
+              src="https://picsum.photos/seed/202/600/600"
+              alt="Gallery 2"
+              class="img-fluid album-img"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="gallery-thumb">
+            <img
+              src="https://picsum.photos/seed/203/600/600"
+              alt="Gallery 3"
+              class="img-fluid album-img"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="gallery-thumb">
+            <img
+              src="https://picsum.photos/seed/204/600/600"
+              alt="Gallery 4"
+              class="img-fluid album-img"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="gallery-thumb">
+            <img
+              src="https://picsum.photos/seed/205/600/600"
+              alt="Gallery 5"
+              class="img-fluid album-img"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="gallery-thumb">
+            <img
+              src="https://picsum.photos/seed/206/600/600"
+              alt="Gallery 6"
+              class="img-fluid album-img"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="gallery-thumb">
+            <img
+              src="https://picsum.photos/seed/207/600/600"
+              alt="Gallery 7"
+              class="img-fluid album-img"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3">
+          <div class="gallery-thumb">
+            <img
+              src="https://picsum.photos/seed/208/600/600"
+              alt="Gallery 8"
+              class="img-fluid album-img"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal para imágenes a pantalla completa -->
+  <div
+    class="modal fade"
+    id="imageModal"
+    tabindex="-1"
+    aria-labelledby="imageModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen d-flex justify-content-center align-items-center">
+      <div class="modal-content bg-transparent border-0 d-flex justify-content-center align-items-center">
+        <button
+          type="button"
+          class="btn btn-light btn-close-modal position-absolute top-0 end-0 m-3"
+          data-bs-dismiss="modal"
+          aria-label="Cerrar"
+        >
+          &times;
+        </button>
+        <img
+          src=""
+          alt="Foto ampliada"
+          id="modalImage"
+          class="img-fluid"
+          style="object-fit: contain; max-width: 90vw; max-height: 90vh;"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: Hidden RSVP Form Anchor -->
+  <section id="contact-form" class="py-5">
+    <div class="container">
+      <!-- Aquí podría ir tu formulario real de RSVP -->
+    </div>
+  </section>
+
+  <!-- ======================
+       Footer
+       ====================== -->
+  <footer class="text-center text-white py-4 bg-dark">
+    <div class="container">
+      <p>
+        Síguenos:
+        <a href="https://instagram.com" target="_blank" class="text-white mx-1"
+          ><i class="bi bi-instagram"></i> Instagram</a
+        >|
+        <a href="https://facebook.com" target="_blank" class="text-white mx-1"
+          ><i class="bi bi-facebook"></i> Facebook</a
+        >|
+        <a href="https://twitter.com" target="_blank" class="text-white mx-1"
+          ><i class="bi bi-twitter"></i> Twitter</a
+        >
+      </p>
+      <p class="mb-1">
+        Wedding Hashtag:
+        <span class="fw-semibold text-warning">#DavidFernanda2024</span>
+      </p>
+      <p class="mb-1">&copy; 2024 David &amp; Fernanda Wedding</p>
+      <p>Made with <i class="bi bi-heart-fill text-danger"></i> for our special day</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS + Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
