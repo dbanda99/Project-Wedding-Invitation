@@ -272,8 +272,10 @@ body {
    ====================== */
 /* Sin cambios (los mantengo aquí para referencia) */
 .story-divider {
-  max-width: 200px;
+  width: 400px;
+  height: 500px;
   margin-bottom: 2rem;
+  object-fit: cover;;
 }
 .story-subtitle {
   font-size: 1.5rem;
