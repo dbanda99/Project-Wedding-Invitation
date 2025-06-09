@@ -146,7 +146,7 @@
     // ================================
     ; (function () {
         // ————— EDITABLE VARS —————
-        const MAX_LEAVES = 15;    // Máximo de hojas en pantalla
+        const MAX_LEAVES = 10;    // Máximo de hojas en pantalla
         const SPAWN_INTERVAL_MS = 1500; // Cada cuántos ms aparece una nueva hoja
         const VX_RANGE = [0.2, 1.2]; // [min, max] velocidad horizontal
         const VY_RANGE = [0.5, 2.5]; // [min, max] velocidad vertical
